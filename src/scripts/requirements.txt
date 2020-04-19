@@ -1,0 +1,10 @@
+# Installed by customer in real world part of their app. Any version works
+azure-identity==1.4.0b2
+
+# Test specific to ARM calls we want to do
+azure-mgmt-resource
+
+# Test infra
+python-dotenv
+
+requests
