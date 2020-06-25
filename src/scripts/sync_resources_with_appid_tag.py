@@ -32,6 +32,8 @@ for subscription in subscriptions:
 
         if app_metadata != None:
             resource.tags.update({'business-owner': app_metadata[0]['businessOwner'], 'tech-owner': app_metadata[0]['techOwner']})
-            tag_update = resource_client.resource_groups.create_or_update(resource.name, {'location': LOCATION, 'tags': resource.tags})
+            tag_update = resource_client.tags.update_at_scope(resource.id, 'Merge', {'tags': resource.tags})
+            print(tag_update)
+            #tag_update = resource_client.resource_groups.create_or_update(resource.name, {'location': LOCATION, 'tags': resource.tags})
 
 print('Done')
